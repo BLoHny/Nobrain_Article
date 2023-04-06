@@ -5,7 +5,9 @@ import com.blohny.article.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -41,5 +43,12 @@ public class BoardController {
         model.addAttribute("board", boardService.boardView(id));
 
         return "boardview";
+    }
+
+    @DeleteMapping("/board/delete")
+    public String delete(Integer id) {
+        boardService.deleteBoard(id);
+
+        return "redirect:/board/list";
     }
 }
