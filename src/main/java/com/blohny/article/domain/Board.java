@@ -1,21 +1,21 @@
 package com.blohny.article.domain;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
-public class board {
+@Data
+public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column(length = 45, nullable = false)
     private String title;
 
     @Column(nullable = false)
-    private String context;
+    private String content;
 }
