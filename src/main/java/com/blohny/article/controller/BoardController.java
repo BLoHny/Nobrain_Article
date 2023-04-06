@@ -6,10 +6,7 @@ import com.blohny.article.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BoardController {
@@ -63,7 +60,7 @@ public class BoardController {
         return "boardmodify";
     }
 
-    @PostMapping("/board/modify/{id}")
+    @PostMapping("/board/update/{id}")
     public String boardUpdate(@PathVariable("id") Integer id, Board board) {
         Board boardTemp = boardService.boardView(id);
         boardTemp.setTitle(board.getTitle());
@@ -75,6 +72,7 @@ public class BoardController {
     }
 
     @GetMapping("/error")
+    @ResponseBody
     public String error() {
         return "에러다 에러 에러!!";
     }
