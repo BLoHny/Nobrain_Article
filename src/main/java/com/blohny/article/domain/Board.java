@@ -18,4 +18,8 @@ public class Board {
 
     @Column(nullable = false)
     private String content;
+
+    private String filename;
+
+    private String filepath;
 }
