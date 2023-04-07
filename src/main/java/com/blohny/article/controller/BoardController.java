@@ -47,7 +47,7 @@ public class BoardController {
 
     @GetMapping("/board/delete")
     public String delete(Integer id) {
-        boardService.deleteBoard(id);
+        boardService.deleteBoard(id );
 
         return "redirect:/board/list";
     }
@@ -64,16 +64,10 @@ public class BoardController {
     public String boardUpdate(@PathVariable("id") Integer id, Board board) {
         Board boardTemp = boardService.boardView(id);
         boardTemp.setTitle(board.getTitle());
-        boardTemp.setContent(boardTemp.getContent());
+        boardTemp.setContent(board.getContent());
 
         boardService.write(boardTemp);
 
         return "redirect:/board/list";
-    }
-
-    @GetMapping("/error")
-    @ResponseBody
-    public String error() {
-        return "에러다 에러 에러!!";
     }
 }
