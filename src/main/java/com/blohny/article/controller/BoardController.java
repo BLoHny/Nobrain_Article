@@ -45,7 +45,7 @@ public class BoardController {
         return "boardview";
     }
 
-    @DeleteMapping("/board/delete")
+    @GetMapping("/board/delete")
     public String delete(Integer id) {
         boardService.deleteBoard(id);
 
