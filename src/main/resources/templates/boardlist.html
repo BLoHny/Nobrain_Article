@@ -10,6 +10,12 @@
     width: 500px;
     margin: 40px auto 0;
   }
+
+  .write {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+  }
 </STYLE>
 
 <body>
@@ -26,12 +32,14 @@
                 <tr th:each="board : ${list}">
                   <td th:text="${board.id}"></td>
                   <td>
-                      <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}">제목입니다.</a>
+                      <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
                   </td>
                 </tr>
             </tbody>
           </table>
     </div>
-
+    <div class="write">
+        <button><a href="http://localhost:9010/board/write">작성</a></button>
+    </div>
 </body>
 </html>
