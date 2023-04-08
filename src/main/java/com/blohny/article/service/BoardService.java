@@ -18,7 +18,7 @@ public class BoardService {
     private BoardRepository boardRepository;
 
     //글 작성 처리
-    public void write(Board board, MultipartFile file) throws IOException {
+    public void write(Board board, MultipartFile file) throws Exception {
 
         String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
 
