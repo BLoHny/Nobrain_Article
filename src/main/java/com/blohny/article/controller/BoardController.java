@@ -76,7 +76,7 @@ public class BoardController {
 
     @GetMapping("/board/delete")
     public String delete(Integer id) {
-        boardService.deleteBoard(id );
+        boardService.deleteBoard(id);
 
         return "redirect:/board/list";
     }

@@ -17,7 +17,9 @@ public class Board {
     @Column(nullable = false)
     private String content;
 
+    @Column(nullable = true)
     private String filename;
 
+    @Column(nullable = true)
     private String filepath;
 }
